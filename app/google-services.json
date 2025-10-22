@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "381833616823",
+    "firebase_url": "https://apppruebi-default-rtdb.firebaseio.com",
+    "project_id": "apppruebi",
+    "storage_bucket": "apppruebi.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:381833616823:android:c730d2e2e2c525efd45c32",
+        "android_client_info": {
+          "package_name": "com.example.pruebi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfWAswbbEMCGUkCCrfkLw2-nkSvTtJLmw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

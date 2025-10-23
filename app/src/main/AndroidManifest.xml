@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartAgroNutriApp">
 
-        <!-- Pantalla principal -->
+        <!-- Pantalla de inicio -->
         <activity
             android:name=".InicioActivity"
             android:exported="true">
@@ -19,11 +19,10 @@
             </intent-filter>
         </activity>
 
-        <!-- Otras pantallas -->
+        <!-- Pantallas normales -->
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".ControlActivity" />
-
+        <activity android:name=".HomeActivity" />
     </application>
 
 </manifest>

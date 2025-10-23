@@ -14,8 +14,10 @@ class InicioActivity : AppCompatActivity() {
         FirebaseApp.initializeApp(this)
 
         val btnIniciar = findViewById<Button>(R.id.btnIniciar)
+
         btnIniciar.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
     }
 }

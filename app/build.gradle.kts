@@ -57,4 +57,5 @@ dependencies {
 
     // Firebase Realtime Database
     implementation("com.google.firebase:firebase-database-ktx")
+    implementation("com.google.firebase:firebase-firestore:25.1.1")
 }

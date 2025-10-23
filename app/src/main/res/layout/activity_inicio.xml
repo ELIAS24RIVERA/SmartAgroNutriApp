@@ -1,47 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/white"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F4F6F7"
-    tools:context=".InicioActivity">
-
-    <ImageView
-        android:id="@+id/logoImage"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:src="@mipmap/ic_launcher_round"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="120dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tvBienvenido"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="¡Hola, bienvenido!"
-        android:textSize="24sp"
+        android:text="Bienvenido a SmartAgroNutriApp"
+        android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="#2E4053"
-        app:layout_constraintTop_toBottomOf="@id/logoImage"
-        android:layout_marginTop="40dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/btnIniciar"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
         android:text="Iniciar"
-        android:textAllCaps="false"
-        android:backgroundTint="#28B463"
-        android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@id/tvBienvenido"
-        android:layout_marginTop="60dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_width="200dp"
+        android:layout_height="wrap_content" />
+</LinearLayout>

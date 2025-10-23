@@ -15,7 +15,6 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        // Inicializar Firebase Auth
         auth = FirebaseAuth.getInstance()
 
         val etEmail = findViewById<EditText>(R.id.etEmail)
@@ -23,7 +22,6 @@ class LoginActivity : AppCompatActivity() {
         val btnLogin = findViewById<Button>(R.id.btnLogin)
         val tvRegistrarse = findViewById<TextView>(R.id.tvRegistrarse)
 
-        // Botón Iniciar Sesión
         btnLogin.setOnClickListener {
             val email = etEmail.text.toString().trim()
             val password = etPassword.text.toString().trim()
@@ -37,10 +35,9 @@ class LoginActivity : AppCompatActivity() {
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         Toast.makeText(this, "Bienvenido!", Toast.LENGTH_SHORT).show()
-                        // Ir a ControlActivity
-                        val intent = Intent(this, ControlActivity::class.java)
+                        val intent = Intent(this, HomeActivity::class.java)
                         startActivity(intent)
-                        finish() // Para no volver a login con el botón atrás
+                        finish()
                     } else {
                         Toast.makeText(
                             this,
@@ -52,18 +49,16 @@ class LoginActivity : AppCompatActivity() {
                 }
         }
 
-        // Botón para ir a Registro
         tvRegistrarse.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
     }
 
-    // Si el usuario ya está logueado, ir directo a ControlActivity
     override fun onStart() {
         super.onStart()
         val currentUser = auth.currentUser
         if (currentUser != null) {
-            startActivity(Intent(this, ControlActivity::class.java))
+            startActivity(Intent(this, HomeActivity::class.java))
             finish()
         }
     }

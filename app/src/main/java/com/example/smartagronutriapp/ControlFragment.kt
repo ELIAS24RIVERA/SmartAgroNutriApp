@@ -12,6 +12,7 @@ import com.google.firebase.database.*
 class ControlFragment : Fragment() {
 
     private lateinit var dbRef: DatabaseReference
+    private lateinit var dbRefDatos: DatabaseReference
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -19,11 +20,13 @@ class ControlFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_control, container, false)
         val tvWelcome = view.findViewById<TextView>(R.id.tvWelcome)
+        val tvDatos = view.findViewById<TextView>(R.id.tvDatos) // Nuevo TextView para datos en tiempo real
 
         val user = FirebaseAuth.getInstance().currentUser
         val uid = user?.uid
 
         if (uid != null) {
+            // Lectura del usuario (igual que antes)
             dbRef = FirebaseDatabase.getInstance().getReference("usuarios").child(uid)
             dbRef.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
@@ -35,8 +38,38 @@ class ControlFragment : Fragment() {
                     tvWelcome.text = "Bienvenido, Usuario"
                 }
             })
+
+            // Lectura en tiempo real del nodo "datos"
+            dbRefDatos = FirebaseDatabase.getInstance().getReference("datos")
+            dbRefDatos.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val conductivity = snapshot.child("conductivity").getValue(Double::class.java) ?: 0.0
+                    val estadoLuz = snapshot.child("estadoLuz").getValue(String::class.java) ?: ""
+                    val lightA0 = snapshot.child("lightA0").getValue(Int::class.java) ?: 0
+                    val lightDO = snapshot.child("lightDO").getValue(Int::class.java) ?: 0
+                    val porcentajeLuz = snapshot.child("porcentajeLuz").getValue(Int::class.java) ?: 0
+                    val temperature = snapshot.child("temperature").getValue(Double::class.java) ?: 0.0
+                    val timestamp = snapshot.child("timestamp").getValue(Long::class.java) ?: 0L
+
+                    tvDatos.text = """
+                        Conductividad: $conductivity
+                        Estado Luz: $estadoLuz
+                        Light A0: $lightA0
+                        Light DO: $lightDO
+                        Porcentaje de Luz: $porcentajeLuz
+                        Temperatura: $temperature °C
+                        Tiempo de uso: $timestamp
+                    """.trimIndent()
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    tvDatos.text = "Error al obtener datos: ${error.message}"
+                }
+            })
+
         } else {
             tvWelcome.text = "Bienvenido, Usuario"
+            tvDatos.text = "No se pudieron cargar datos."
         }
 
         return view

@@ -1,22 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@color/white"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:background="@drawable/fondo_inicio"
+    android:padding="24dp">
 
     <TextView
-        android:text="Bienvenido a SmartAgroNutriApp"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="20dp"
+        android:id="@+id/tvBienvenido"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="¡Bienvenido!"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo_smartagronutri"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SMARTAGRONUTRI"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/tvDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sistema de monitoreo automatizado de nutrientes para áreas verdes"
+        android:textColor="#CCCCCC"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
 
     <Button
         android:id="@+id/btnIniciar"
-        android:text="Iniciar"
         android:layout_width="200dp"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Iniciar"
+        android:textAllCaps="false"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#000000" />
+
 </LinearLayout>

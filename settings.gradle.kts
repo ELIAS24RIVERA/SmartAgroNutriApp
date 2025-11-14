@@ -1,14 +1,10 @@
 pluginManagement {
     repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
+        google()
         mavenCentral()
         gradlePluginPortal()
+        maven(url = "https://storage.googleapis.com/tensorflow-nightly/github/maven")
+        maven(url = "https://jitpack.io") // para MPAndroidChart
     }
 }
 
@@ -17,6 +13,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven(url = "https://storage.googleapis.com/tensorflow-nightly/github/maven")
+        maven(url = "https://jitpack.io")
     }
 }
 

@@ -1,19 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:background="#2E2E2E"
+    android:gravity="center_horizontal"
+    android:padding="16dp">
+
+    <!-- 🟩 Encabezado -->
     <TextView
         android:id="@+id/tvWelcomeEstadistica"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bienvenido"
-        android:textSize="18sp"
-        android:layout_margin="16dp"/>
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:background="@drawable/rounded_white_bg"
+        android:text="HOLA, ELVIS"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="20sp" />
 
+    <!-- 🟧 Subtítulo -->
     <TextView
-        android:text="Vista de Estadística"
-        android:textSize="24sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:id="@+id/tvSubtitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:background="#1B1B1B"
+        android:padding="8dp"
+        android:text="Últimos dato registrado"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+    <!-- 📊 Gráfico de barras -->
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barChart"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center_horizontal" />
+
+    <!-- 🥧 Gráfico circular -->
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChart"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="430dp"
+        android:layout_gravity="center_horizontal" />
+
 </FrameLayout>

@@ -1,23 +1,228 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:background="#808080">
 
-    <TextView
-        android:id="@+id/tvWelcome"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bienvenido"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <TextView
-        android:id="@+id/tvDatos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Datos en tiempo real"
-        android:textSize="16sp" />
+        <!-- Saludo y foto -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:padding="8dp"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp"
+            android:clipToOutline="true"
+            android:layout_gravity="center"
+            android:elevation="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
 
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="HOLA, ELVIS"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:textColor="#000000" />
+
+            <ImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/profile_pic"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/circle_background"
+                android:scaleType="centerCrop" />
+        </LinearLayout>
+
+        <!-- Título Datos de Sensores -->
+        <TextView
+            android:id="@+id/tvDatos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Datos de Sensores"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:background="#000000"
+            android:padding="4dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Cuadros de sensores -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false"
+            android:rowOrderPreserved="false"
+            android:useDefaultMargins="true">
+
+            <!-- 🔹 Temperatura -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:background="@drawable/rounded_blue_border"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temperatura"
+                    android:textColor="#000080"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_temperature"
+                    android:tint="#FF0000"
+                    android:layout_marginTop="8dp" />
+
+                <!-- ID agregado -->
+                <TextView
+                    android:id="@+id/tvTemperatura"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-- °C"
+                    android:textColor="#FF0000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <!-- 🔹 Luz Ambiental -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:background="@drawable/rounded_blue_border"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Luz Ambiental"
+                    android:textColor="#00CED1"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_light"
+                    android:tint="#00CED1"
+                    android:layout_marginTop="8dp" />
+
+                <!-- ID agregado -->
+                <TextView
+                    android:id="@+id/tvLuzAmbiental"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-- %"
+                    android:textColor="#00CED1"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <!-- 🔹 Conductividad -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:background="@drawable/rounded_green_border"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CE %"
+                    android:textColor="#008000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_lightning"
+                    android:tint="#008000"
+                    android:layout_marginTop="8dp" />
+
+                <!-- ID agregado -->
+                <TextView
+                    android:id="@+id/tvConductividad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-- %"
+                    android:textColor="#008000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <!-- 🔹 Modo de Operación -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:background="@drawable/rounded_yellow_border"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Modo de Operacion"
+                    android:textColor="#FFD700"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_build" />
+
+                <!-- ID agregado -->
+                <TextView
+                    android:id="@+id/tvModoOperacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:textColor="#FFD700"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </GridLayout>
+    </LinearLayout>
 </FrameLayout>

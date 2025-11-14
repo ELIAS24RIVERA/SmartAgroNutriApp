@@ -5,6 +5,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="20dp">
+
     <TextView
         android:id="@+id/tvUserConfig"
         android:layout_width="wrap_content"
@@ -18,4 +19,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cerrar sesión" />
+
+    <Button
+        android:id="@+id/btnAbrirCamara"
+        android:text="Abrir cámara"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"/>
+
+    <ImageView
+        android:id="@+id/imagenPlanta"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="20dp"/>
+
 </LinearLayout>

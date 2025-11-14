@@ -1,38 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:background="#4C565C">
 
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tvRegistroTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REGISTRO"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo_smartagronutri"
+        android:layout_gravity="center"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Nombre de la App -->
+    <TextView
+        android:id="@+id/tvNombreApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SMARTAGRONUTRI"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Campo Nombre completo -->
     <EditText
         android:id="@+id/etName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre"
+        android:hint="Nombre completo"
         android:inputType="textPersonName"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="#CCCCCC"
+        android:backgroundTint="@android:color/white"/>
 
+    <!-- Campo Correo -->
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Correo"
+        android:hint="Correo electrónico"
         android:inputType="textEmailAddress"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="#CCCCCC"
+        android:backgroundTint="@android:color/white"/>
 
+    <!-- Campo Contraseña -->
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Contraseña"
         android:inputType="textPassword"
-        android:layout_marginBottom="24dp"/>
+        android:layout_marginBottom="24dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="#CCCCCC"
+        android:backgroundTint="@android:color/white"/>
 
+    <!-- Botón Registrar -->
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registrar" />
+        android:text="Registrarse"
+        android:backgroundTint="@android:color/white"
+        android:textColor="#000000"/>
 
 </LinearLayout>

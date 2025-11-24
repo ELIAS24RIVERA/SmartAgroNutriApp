@@ -1,55 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2E2E2E"
-    android:gravity="center_horizontal"
-    android:padding="16dp">
+    android:background="#121212">
 
-    <!-- 🟩 Encabezado -->
-    <TextView
-        android:id="@+id/tvWelcomeEstadistica"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="8dp"
-        android:gravity="center"
-        android:padding="8dp"
-        android:background="@drawable/rounded_white_bg"
-        android:text="HOLA, ELVIS"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:textSize="20sp" />
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
 
-    <!-- 🟧 Subtítulo -->
-    <TextView
-        android:id="@+id/tvSubtitulo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:gravity="center"
-        android:background="#1B1B1B"
-        android:padding="8dp"
-        android:text="Últimos dato registrado"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp" />
+        <!-- 🟦 TARJETA DE BIENVENIDA -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="#1F1F1F"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="10dp">
 
-    <!-- 📊 Gráfico de barras -->
-    <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/barChart"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginBottom="16dp"
-        android:layout_gravity="center_horizontal" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center">
 
-    <!-- 🥧 Gráfico circular -->
-    <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/pieChart"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="430dp"
-        android:layout_gravity="center_horizontal" />
+                <TextView
+                    android:id="@+id/tvWelcomeEstadistica"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HOLA, ELVIS"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="22sp"/>
 
-</FrameLayout>
+                <TextView
+                    android:id="@+id/tvSubtitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Últimos datos registrados"
+                    android:textColor="#BDBDBD"
+                    android:textSize="15sp"
+                    android:layout_marginTop="6dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- 📊 TARJETA DEL GRÁFICO DE BARRAS -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="#1F1F1F"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gráfico de crecimiento"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="10dp"/>
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/barChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- 🥧 TARJETA DEL GRÁFICO CIRCULAR -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="30dp"
+            app:cardBackgroundColor="#1F1F1F"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Distribución porcentual"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="10dp"/>
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

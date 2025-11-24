@@ -1,5 +1,6 @@
-0 PLANTAS SANAS
-1 planta_enferma_mancha
+0 planta_sana
+1 planta_enferma_mancha 
 2 planta_enferma_podredumbre_negra
 3 planta_enferma_roya
-4 planta_enferma_sarna
+4 planta_enferma_sarma
+5 enblanco
